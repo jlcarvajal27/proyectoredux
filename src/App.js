@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import Contador from "./components/Contador";
+import ShopingCart from "./components/ShopingCar";
+import TeoriaRedux from "./components/teoriaRedux";
+import store from "./store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div style={{ textAlign: "center" }}>
+        <h1> teoria de redux</h1>
+        <ShopingCart />
+        <hr />
+        <Contador />
+        <hr />
+        <TeoriaRedux />
+      </div>
+    </Provider>
   );
 }
 
